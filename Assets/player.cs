@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class player : MonoBehaviour {
     public float speed;
+    [Space(20)]
+    public float upBound;
+    public float lowerBound;
 
     // Start is called before the first frame update
     void Start() {
@@ -12,6 +16,12 @@ public class player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.Translate(new Vector3(speed * Time.deltaTime, 0.0f, 0.0f));
+        if (Input.GetAxisRaw("Vertical")>0 && transform.position.y < upBound) {
+            print(transform.position.y);
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+        if (Input.GetAxisRaw("Vertical")<0 && transform.position.y > lowerBound) {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+        }
     }
 }
