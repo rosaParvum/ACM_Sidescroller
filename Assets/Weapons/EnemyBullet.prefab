@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 5284390293917496904, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5540291474964346346, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
       propertyPath: velocity
       value: -20

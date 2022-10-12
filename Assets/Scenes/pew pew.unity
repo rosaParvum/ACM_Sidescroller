@@ -603,6 +603,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
   m_PrefabInstance: {fileID: 1717594425}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &841233653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+  m_PrefabInstance: {fileID: 1717594425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6abe57f443d9c49b695f62b5964512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1690830084
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,29 +674,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 841233653}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: gotHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EnemyAI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649666308556087, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.9
+      value: 84.6
       objectReference: {fileID: 0}
     - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.8
+      value: -34.8
       objectReference: {fileID: 0}
     - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
       propertyPath: m_LocalPosition.z
@@ -717,6 +748,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5974329856296802326, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510212205973443809, guid: f51cba088b8ed874da47f7a0781e0614, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

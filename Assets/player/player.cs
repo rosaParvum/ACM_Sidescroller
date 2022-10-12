@@ -42,11 +42,8 @@ public class player : MonoBehaviour {
             physAnim.SetFloat("Direction", 0);
         }
 
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && canMove) {
             shoot.Invoke();
-        }
-        if (Input.GetButtonDown("Fire2")) {
-            hit.Invoke();
         }
     }
 

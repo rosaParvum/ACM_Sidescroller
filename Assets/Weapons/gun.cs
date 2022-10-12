@@ -12,6 +12,5 @@ public class gun : MonoBehaviour
     public void fire() {
         selfAnim.SetTrigger("Fire");
         GameObject bulletSpawned = Instantiate(Bullet, transform.position, new Quaternion(0.0f,0.0f,0.0f,0.0f));
-        bulletSpawned.transform.parent = gameObject.transform;
     }
 }

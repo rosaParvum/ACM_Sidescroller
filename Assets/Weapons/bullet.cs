@@ -16,8 +16,16 @@ public class bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (transform.parent.tag != "Player") {
-            col.gameObject.GetComponent<player>().hit.Invoke();
+        if (col.gameObject.tag != gameObject.tag) {
+            switch (col.gameObject.tag) {
+                case "Player":
+                    col.gameObject.GetComponent<player>().hit.Invoke();
+                    break;
+                case "Enemy":
+                    col.gameObject.GetComponent<EnemyAI>().hit.Invoke();
+                    break;
+            }
+            Destroy(gameObject);
         }
     }
 }
