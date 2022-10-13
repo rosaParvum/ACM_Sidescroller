@@ -19,7 +19,7 @@ public class bullet : MonoBehaviour
         if (col.gameObject.tag != gameObject.tag) {
             switch (col.gameObject.tag) {
                 case "Player":
-                    col.gameObject.GetComponent<player>().hit.Invoke();
+                    if(!col.gameObject.GetComponentInChildren<shipAnimStats>().inv) {col.gameObject.GetComponent<player>().hit.Invoke();}
                     break;
                 case "Enemy":
                     col.gameObject.GetComponent<EnemyAI>().hit.Invoke();

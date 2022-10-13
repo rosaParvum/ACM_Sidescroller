@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 4935946598677571641}
   - component: {fileID: 4935946598677571640}
   - component: {fileID: 4935946598677571639}
+  - component: {fileID: 8573464493683587733}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -221,6 +222,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8573464493683587733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935946598677571638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f2dd473431440ec86b769ab12efb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodgeHidden: 0
+  dodging: 0
+  inv: 0
 --- !u!1 &4935946599003890915
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98682ff2559d9c4bb7032fdc2d72bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   speed: 5
+  power: 0
+  rechargeRate: 0
+  energyBar: {fileID: 0}
   upBound: 4
   lowerBound: -4
   hit:
@@ -388,6 +408,21 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dodge:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4935946598677571639}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dodge
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &4935946599003890918

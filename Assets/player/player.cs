@@ -12,6 +12,7 @@ public class player : MonoBehaviour {
     public float power;
     public float rechargeRate;
     public Slider energyBar;
+    public float dodgeSpeed;
     [Space(20)]
     [Header("Set Boundaries")]
     public float upBound;
@@ -24,50 +25,68 @@ public class player : MonoBehaviour {
     [Header("Reaction Events")]
     public UnityEvent hit;
     public UnityEvent shoot; 
+    public UnityEvent dodge;
 
     bool canMove = true;
     bool canCharge = true;
+    float powerChange = 0.0f;
+    bool moving;
+    shipAnimStats sAs;
+    float baseSpeed;
     
 
     // Start is called before the first frame update
     void Start() {
         playerAnim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         physAnim = gameObject.GetComponent<Animator>();
+        sAs = gameObject.GetComponentInChildren<shipAnimStats>();
+        baseSpeed = speed;
     }
 
     // Update is called once per frame
     void Update() {
-        float powerChange = 0.0f;
         float direction = Input.GetAxisRaw("Vertical");
+        if (sAs.inv) {speed += 5.0f;}
         if (direction>0 && transform.position.y < upBound &&canMove) {
             physAnim.SetFloat("Direction", direction);
             playerAnim.SetBool("Move", true);
-
             transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+            moving = true;
         } else if (direction<0 && transform.position.y > lowerBound&&canMove) {
             physAnim.SetFloat("Direction", direction);
             transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
             playerAnim.SetBool("Move", true);
+            moving=true;
         } else {
             playerAnim.SetBool("Move", false);
             physAnim.SetFloat("Direction", 0);
-
-            //Idle recharge
-            if (canCharge) {
-                powerChange += rechargeRate/60;
-            }
+            moving=false;
         }
-
         if (Input.GetButtonDown("Fire1") && canMove) {
             shoot.Invoke();
             powerChange -= 30;
         }
+
+        if (Input.GetButtonDown("Jump") && canMove) {
+            dodge.Invoke();
+            powerChange -= 30;
+        }
+
+        speed = baseSpeed;
+    }
+
+    void FixedUpdate() {
+
+        if (canCharge && !moving) {
+                powerChange += rechargeRate/60;
+        }
+
         power = Mathf.Clamp(power + powerChange, 0.0f, 100.0f);
         energyBar.value=power;
-
         if (power == 0) {
             StartCoroutine("overheat");
         }
+        powerChange = 0.0f;
     }
 
     IEnumerator overheat() {

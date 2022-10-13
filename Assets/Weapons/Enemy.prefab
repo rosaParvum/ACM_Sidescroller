@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSpeed: 2
   bullet: {fileID: 8805085525980611075, guid: 1c88e780801309a448fdf8c20f184594, type: 3}
-  health: 5
+  health: 3
   shoot:
     m_PersistentCalls:
       m_Calls:
