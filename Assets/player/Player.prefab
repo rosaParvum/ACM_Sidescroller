@@ -294,6 +294,7 @@ MonoBehaviour:
   power: 0
   rechargeRate: 0
   energyBar: {fileID: 0}
+  dodgeSpeed: 0
   upBound: 4
   lowerBound: -4
   hit:
@@ -347,33 +348,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   shoot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7279716368332663449}
-        m_TargetAssemblyTypeName: gun, Assembly-CSharp
-        m_MethodName: fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4935946599003890920}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_clip
@@ -410,6 +387,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4935946599003890916}
+        m_TargetAssemblyTypeName: player, Assembly-CSharp
+        m_MethodName: expend
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 20
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dodge:
     m_PersistentCalls:
       m_Calls:
@@ -423,6 +412,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Dodge
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4935946599003890916}
+        m_TargetAssemblyTypeName: player, Assembly-CSharp
+        m_MethodName: expend
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 30
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &4935946599003890918
@@ -830,14 +831,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8288287515132651525, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
   m_PrefabInstance: {fileID: 3446887601231563774}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7279716368332663449 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
-  m_PrefabInstance: {fileID: 3446887601231563774}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f32b57b710c60f48b04ad99f166a304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

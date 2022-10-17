@@ -13,15 +13,17 @@ public class EnemyAI : MonoBehaviour
     [Header("Reaction Events")]
     public UnityEvent shoot;
     public UnityEvent hit;
+    GameObject frame;
     
 
     void Start() {
         StartCoroutine(ShootClock());
+        frame = GameObject.FindGameObjectWithTag("Frame");
     }
 
     public void Fire() {
         GameObject bulletSpawned = Instantiate(bullet, transform.position, new Quaternion(0.0f,0.0f,0.0f,0.0f));
-        bulletSpawned.transform.parent = gameObject.transform;
+        bulletSpawned.transform.parent = transform.parent.parent.parent;
     }
 
     public void gotHit() {

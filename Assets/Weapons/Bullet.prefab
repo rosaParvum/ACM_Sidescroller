@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5616277899067294613}
   - component: {fileID: 5540291474964346346}
   - component: {fileID: 2242026086984301214}
+  - component: {fileID: -2129286509967029317}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Player
@@ -98,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e10373b96b44d347bc694e5c3e82376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
+  velocity: 8
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2242026086984301214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,3 +129,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!50 &-2129286509967029317
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284390293917496904}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.01
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 2
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -261,7 +261,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.06666667
+  - time: 0.016666668
     functionName: startInv
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -282,7 +282,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.26666668
+  - time: 0.31666666
     functionName: stopInv
     data: 
     objectReferenceParameter: {fileID: 0}

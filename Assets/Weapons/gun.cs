@@ -9,8 +9,13 @@ public class gun : MonoBehaviour
     void Start () {
         selfAnim = gameObject.GetComponent<Animator>();
     }
-    public void fire() {
+    
+    //WHAT THE FUCK ARE THESE ARGUMENTS???
+    //WHY THE FUCK IS THERE A QUESTION MARK
+    // WHY IS THE VALUE NULL
+    public void fire(Quaternion? brot = null) {
+        //if (brot==null) {brot = new Quaternion(0.0f,0.0f,0.0f,0.0f);}
         selfAnim.SetTrigger("Fire");
-        GameObject bulletSpawned = Instantiate(Bullet, transform.position, new Quaternion(0.0f,0.0f,0.0f,0.0f));
+        GameObject bulletSpawned = Instantiate(Bullet, transform.position, (Quaternion)brot);
     }
 }
