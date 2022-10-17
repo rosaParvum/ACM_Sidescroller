@@ -28,9 +28,9 @@ public class player : MonoBehaviour {
     public UnityEvent dodge;
 
     bool canMove = true;
-    bool canCharge = true;
+    bool canCharge = true;                                                                                                                                                        
     float powerChange = 0.0f;
-    bool moving;
+    bool moving; 
     shipAnimStats sAs;
     float baseSpeed;
     
@@ -41,12 +41,13 @@ public class player : MonoBehaviour {
         physAnim = gameObject.GetComponent<Animator>();
         sAs = gameObject.GetComponentInChildren<shipAnimStats>();
         baseSpeed = speed;
+        hit.AddListener(gotHit);
     }
 
     // Update is called once per frame
     void Update() {
         float direction = Input.GetAxisRaw("Vertical");
-        if (sAs.inv) {speed += 5.0f;}
+        if (sAs.inv) {speed += 20.0f;}
         if (direction>0 && transform.position.y < upBound &&canMove) {
             physAnim.SetFloat("Direction", direction);
             playerAnim.SetBool("Move", true);
@@ -64,12 +65,10 @@ public class player : MonoBehaviour {
         }
         if (Input.GetButtonDown("Fire1") && canMove) {
             shoot.Invoke();
-            powerChange -= 30;
         }
 
         if (Input.GetButtonDown("Jump") && canMove) {
             dodge.Invoke();
-            powerChange -= 30;
         }
 
         speed = baseSpeed;
@@ -77,7 +76,7 @@ public class player : MonoBehaviour {
 
     void FixedUpdate() {
 
-        if (canCharge && !moving) {
+        if (canCharge ){//&& !moving) {
                 powerChange += rechargeRate/60;
         }
 
@@ -99,5 +98,13 @@ public class player : MonoBehaviour {
 
     public void gotHit() {
         canMove = false;
+    }
+
+    public void shoot(){
+        
+    }
+
+    public void expend(float energy) {
+        power -= energy;
     }
 }
