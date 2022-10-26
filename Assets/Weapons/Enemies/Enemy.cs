@@ -9,6 +9,7 @@ public class Enemy:ScriptableObject {
 
     public GameObject Spawn(spawner[] spawners, string pos = "random") {
         GameObject spawned = null;
+        spawner chosen = spawners[0];
         Back:
         switch (pos) {
             case "random":
@@ -20,21 +21,21 @@ public class Enemy:ScriptableObject {
                 }
                 goto Back;
             case "top":
-                Debug.Log(pos);
-                spawned = spawners[0].Spawn(prefab);
-                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[0];}
-                return spawned;
+                chosen = spawners[0];
+                break;
             case "mid":
-                Debug.Log(pos);
-                spawned = spawners[1].Spawn(prefab);
-                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[1];}
+                chosen = spawners[1];
                 return spawned;
             case "bot":
-                Debug.Log(pos);
-                spawned = spawners[2].Spawn(prefab);
-                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[2];}
-                return spawned;
+                chosen = spawners[2];
+                break;
         }
-        return null;
+        spawned = chosen.Spawn(prefab);
+        if(spawned!=null){
+            spawned.GetComponent<EnemyAI>().spawnColumn = chosen;
+            return spawned;
+        } else {
+            return null;
+        }
     }
 }

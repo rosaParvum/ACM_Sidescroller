@@ -103,14 +103,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSpeed: 2
-  bullet: {fileID: 8805085525980611075, guid: 1c88e780801309a448fdf8c20f184594, type: 3}
   health: 3
   shoot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3074649666308556087}
-        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
-        m_MethodName: Fire
+      - m_Target: {fileID: 2116075994854345580}
+        m_TargetAssemblyTypeName: gun, Assembly-CSharp
+        m_MethodName: fire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,6 +158,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  spawnColumn: {fileID: 0}
 --- !u!50 &8510212205973443809
 Rigidbody2D:
   serializedVersion: 4
@@ -339,8 +339,12 @@ PrefabInstance:
       objectReference: {fileID: 8805085525980611075, guid: 1c88e780801309a448fdf8c20f184594, type: 3}
     - target: {fileID: 7126477259338907734, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7126477259338907734, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8e4fd3da07f265848925d0162f1ff7ac, type: 2}
     - target: {fileID: 8288287515132651525, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -387,6 +391,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+--- !u!114 &2116075994854345580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+  m_PrefabInstance: {fileID: 6309189664465873419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f32b57b710c60f48b04ad99f166a304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2633294092234424846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8288287515132651525, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}

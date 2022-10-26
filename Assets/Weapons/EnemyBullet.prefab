@@ -16,6 +16,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 699807310166071845, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 699807310166071845, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5540291474964346346, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
       propertyPath: velocity
-      value: -8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5540291474964346346, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
       propertyPath: onSpawn.m_PersistentCalls.m_Calls.Array.size

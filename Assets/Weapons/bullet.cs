@@ -12,7 +12,7 @@ public class bullet : MonoBehaviour
     void Start() {
         Destroy(gameObject, 3.0f);
         bulletPhys = gameObject.GetComponent<Rigidbody2D>();
-        bulletPhys.AddForce(Vector2.right*velocity);
+        bulletPhys.AddForce(transform.right*velocity);
     }
 
 
@@ -30,9 +30,5 @@ public class bullet : MonoBehaviour
                     break;
             }
         }
-    }
-
-    public void LookAtPlayer() {
-        transform.right = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
     }
 }

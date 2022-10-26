@@ -7,7 +7,6 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("Stats")]
     public float fireSpeed;
-    public GameObject bullet;
     public int health;
     [Space(20)]
     [Header("Reaction Events")]
@@ -16,17 +15,21 @@ public class EnemyAI : MonoBehaviour
     GameObject frame;
     [HideInInspector]
     public spawner spawnColumn;
+    gun myGun;
+    Transform thePlayer;
     
 
     void Start() {
+        myGun = transform.GetChild(0).GetComponent<gun>();
+        thePlayer = GameObject.Find("Player").transform;
         spawnColumn.canSpawn=false;
         StartCoroutine(ShootClock());
         frame = GameObject.FindGameObjectWithTag("Frame");
     }
 
-    public void Fire() {
-        GameObject bulletSpawned = Instantiate(bullet, transform.position, new Quaternion(0.0f,0.0f,0.0f,0.0f));
-        bulletSpawned.transform.parent = transform.parent.parent.parent;
+    void Update() {
+        myGun.transform.right = thePlayer.position - myGun.transform.position;
+        myGun.currentAngle = myGun.transform.rotation;
     }
 
     public void gotHit() {

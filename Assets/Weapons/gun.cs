@@ -16,9 +16,8 @@ public class gun : MonoBehaviour
     //WHY THE FUCK IS THERE A QUESTION MARK
     //WHY IS THE VALUE NULL
     public void fire() {
-
         //if (brot==null) {brot = new Quaternion(0.0f,0.0f,0.0f,0.0f);}
-        selfAnim.SetTrigger("Fire");
+        if(selfAnim){selfAnim.SetTrigger("Fire");}
         GameObject bulletSpawned = Instantiate(Bullet, transform.position, currentAngle);
     }
 }
