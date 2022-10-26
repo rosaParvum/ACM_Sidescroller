@@ -25,6 +25,8 @@ public class EnemyAI : MonoBehaviour
         spawnColumn.canSpawn=false;
         StartCoroutine(ShootClock());
         frame = GameObject.FindGameObjectWithTag("Frame");
+
+        shoot.Invoke();
     }
 
     void Update() {
