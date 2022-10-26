@@ -100,10 +100,6 @@ public class player : MonoBehaviour {
         canMove = false;
     }
 
-    public void shoot(){
-        
-    }
-
     public void expend(float energy) {
         power -= energy;
     }

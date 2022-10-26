@@ -13,12 +13,4 @@ public class spawner : MonoBehaviour
             return null;
         }
     }
-
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag=="Enemy") {canSpawn = false;}
-    }
-
-    void OnTriggerExit2D(Collider2D col) {
-        if (col.tag=="Enemy") {canSpawn = true;}
-    }
 }

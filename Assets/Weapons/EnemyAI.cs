@@ -14,9 +14,12 @@ public class EnemyAI : MonoBehaviour
     public UnityEvent shoot;
     public UnityEvent hit;
     GameObject frame;
+    [HideInInspector]
+    public spawner spawnColumn;
     
 
     void Start() {
+        spawnColumn.canSpawn=false;
         StartCoroutine(ShootClock());
         frame = GameObject.FindGameObjectWithTag("Frame");
     }
@@ -30,6 +33,7 @@ public class EnemyAI : MonoBehaviour
         health -= 1;
         //hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
         if (health == 0) {
+            spawnColumn.canSpawn=true;
             Destroy(gameObject);
         }
     }

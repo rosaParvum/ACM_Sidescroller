@@ -7,7 +7,8 @@ public class Enemy:ScriptableObject {
     public GameObject prefab;
     public float frequency;
 
-    public void Spawn(spawner[] spawners, string pos = "random") {
+    public GameObject Spawn(spawner[] spawners, string pos = "random") {
+        GameObject spawned = null;
         Back:
         switch (pos) {
             case "random":
@@ -19,14 +20,21 @@ public class Enemy:ScriptableObject {
                 }
                 goto Back;
             case "top":
-                spawners[0].Spawn(prefab);
-                break;
+                Debug.Log(pos);
+                spawned = spawners[0].Spawn(prefab);
+                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[0];}
+                return spawned;
             case "mid":
-                spawners[1].Spawn(prefab);
-                break;
+                Debug.Log(pos);
+                spawned = spawners[1].Spawn(prefab);
+                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[1];}
+                return spawned;
             case "bot":
-                spawners[2].Spawn(prefab);
-                break;
+                Debug.Log(pos);
+                spawned = spawners[2].Spawn(prefab);
+                if(spawned!=null){spawned.GetComponent<EnemyAI>().spawnColumn = spawners[2];}
+                return spawned;
         }
+        return null;
     }
 }

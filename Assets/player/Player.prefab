@@ -291,8 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 5
-  power: 0
-  rechargeRate: 0
+  power: 100
+  rechargeRate: 30
   energyBar: {fileID: 0}
   dodgeSpeed: 0
   upBound: 4
@@ -366,6 +366,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4935946599003890921}
         m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
         m_MethodName: GenerateImpulse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7279716368332663449}
+        m_TargetAssemblyTypeName: gun, Assembly-CSharp
+        m_MethodName: fire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -831,3 +843,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8288287515132651525, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
   m_PrefabInstance: {fileID: 3446887601231563774}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7279716368332663449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+  m_PrefabInstance: {fileID: 3446887601231563774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f32b57b710c60f48b04ad99f166a304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
