@@ -35,7 +35,7 @@ public class Enemy:ScriptableObject {
             spawned.GetComponent<EnemyAI>().spawnColumn = chosen;
             return spawned;
         } else {
-            goto Back;
+            return null;
         }
     }
 }
