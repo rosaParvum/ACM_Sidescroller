@@ -8,24 +8,25 @@ public class GameManager : MonoBehaviour {
     public int wave;
     public float transitionSpeed;
     public static Animator SceneTransitions { get; private set; }
+
+    public void Start() {
+        SceneTransitions = gameObject.GetComponent<Animator>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     private void Awake()
     {
         if (Instance != null) {Destroy(gameObject);}
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    public void Start() {
-        SceneTransitions = Instance.GetComponent<Animator>();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         SceneTransitions.SetTrigger("Contract");
     }
 
-    public static void loadScene(string name) {
+    public void loadScene(string name) {
+        print("cock");
         Instance.StartCoroutine("transition", name);
     }
     private IEnumerator transition(string name) {
