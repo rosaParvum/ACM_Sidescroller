@@ -33,6 +33,8 @@ public class player : MonoBehaviour {
     bool moving; 
     shipAnimStats sAs;
     float baseSpeed;
+
+    FixedJoystick stick;
     
 
     // Start is called before the first frame update
@@ -40,6 +42,7 @@ public class player : MonoBehaviour {
         playerAnim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         physAnim = gameObject.GetComponent<Animator>();
         sAs = gameObject.GetComponentInChildren<shipAnimStats>();
+        stick = FindObjectOfType<FixedJoystick>();
         baseSpeed = speed;
         hit.AddListener(gotHit);
     }
@@ -47,6 +50,8 @@ public class player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         float direction = Input.GetAxisRaw("Vertical");
+        if(stick){direction+=stick.Direction.y;}
+
         if (sAs.inv) {speed += 20.0f;}
         if (direction>0 && transform.position.y < upBound &&canMove) {
             physAnim.SetFloat("Direction", direction);
@@ -76,8 +81,8 @@ public class player : MonoBehaviour {
 
     void FixedUpdate() {
 
-        if (canCharge ){//&& !moving) {
-                powerChange += rechargeRate/60;
+        if (canCharge){//&& !moving) {
+            powerChange += rechargeRate/60;
         }
 
         power = Mathf.Clamp(power + powerChange, 0.0f, 100.0f);
@@ -102,5 +107,17 @@ public class player : MonoBehaviour {
 
     public void expend(float energy) {
         power -= energy;
+    }
+
+    public void InvokeShoot() {
+        shoot.Invoke();
+    }
+
+    public void InvokeHit() {
+        hit.Invoke();
+    }
+
+    public void InvokeDodge() {
+        dodge.Invoke();
     }
 }
