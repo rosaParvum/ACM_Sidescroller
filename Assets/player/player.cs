@@ -110,7 +110,9 @@ public class player : MonoBehaviour {
     }
 
     public void InvokeShoot() {
-        shoot.Invoke();
+        if (canMove) {
+            shoot.Invoke();
+        }
     }
 
     public void InvokeHit() {
@@ -118,6 +120,8 @@ public class player : MonoBehaviour {
     }
 
     public void InvokeDodge() {
-        dodge.Invoke();
+        if (canMove) {
+            dodge.Invoke();
+        }
     }
 }
