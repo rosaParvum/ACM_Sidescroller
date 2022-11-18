@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4913269194507702672}
+  - component: {fileID: 4913269194507702674}
   - component: {fileID: 4913269194507702673}
   - component: {fileID: 4913269194507702678}
-  - component: {fileID: 4913269194507702674}
   - component: {fileID: 4913269194507702675}
   m_Layer: 0
   m_Name: Brain
@@ -36,6 +36,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4913269194507702674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913269194507702679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6abe57f443d9c49b695f62b5964512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSpeed: 1.5
+  health: 3
+  shoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1079739352283041087}
+        m_TargetAssemblyTypeName: gun, Assembly-CSharp
+        m_MethodName: fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4913269194507702675}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: hit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4913269194507702674}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: gotHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  spawnColumn: {fileID: 0}
 --- !u!212 &4913269194507702673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +158,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6, y: 2.5}
+  m_Offset: {x: 0.6, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,53 +169,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 8}
+  m_Size: {x: 10, y: 13}
   m_EdgeRadius: 0
---- !u!114 &4913269194507702674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913269194507702679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6abe57f443d9c49b695f62b5964512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSpeed: 0
-  health: 3
-  shoot:
-    m_PersistentCalls:
-      m_Calls: []
-  hit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4913269194507702675}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: hit
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4913269194507702674}
-        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
-        m_MethodName: gotHit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  spawnColumn: {fileID: 0}
 --- !u!95 &4913269194507702675
 Animator:
   serializedVersion: 4
@@ -193,7 +205,11 @@ PrefabInstance:
     - target: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
       propertyPath: Bullet
       value: 
-      objectReference: {fileID: 8805085525980611075, guid: 1c88e780801309a448fdf8c20f184594, type: 3}
+      objectReference: {fileID: 8643914182179225190, guid: c6ac2f6838f9c18489c808b078713c2b, type: 3}
+    - target: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+      propertyPath: direction
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7126477259338907734, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
       propertyPath: m_Controller
       value: 
@@ -244,6 +260,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+--- !u!114 &1079739352283041087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5391777927896211815, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}
+  m_PrefabInstance: {fileID: 4913269195486850136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f32b57b710c60f48b04ad99f166a304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3975158781969794141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8288287515132651525, guid: 05afd029ed7abe348a8d649e42cbd921, type: 3}

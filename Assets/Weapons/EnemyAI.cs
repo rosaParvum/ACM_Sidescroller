@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update() {
         myGun.transform.right = thePlayer.position - myGun.transform.position;
-        myGun.currentAngle = myGun.transform.rotation;
+        myGun.currentAngle = myGun.transform.eulerAngles.z;
     }
 
     public void gotHit() {

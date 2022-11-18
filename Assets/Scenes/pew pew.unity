@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 03b0c2ecfb193514f9bef896baae7a50, type: 2}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.0627451}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.101960786}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2247,9 +2247,17 @@ PrefabInstance:
       value: Spawners
       objectReference: {fileID: 0}
     - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
+      propertyPath: enemyTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: enemyTypes.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 080ac1047bbae094698bd221e768623a, type: 2}
+    - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
+      propertyPath: enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d9dfff12711d2c04d9653400f290ade9, type: 2}
     - target: {fileID: 5649617802598153975, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: m_RootOrder
       value: 1

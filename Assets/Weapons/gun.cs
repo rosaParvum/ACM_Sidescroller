@@ -7,7 +7,8 @@ public class gun : MonoBehaviour
     Animator selfAnim;
     public GameObject Bullet;
 
-    public Quaternion currentAngle=new Quaternion(0.0f,0.0f,0.0f,0.0f);
+    public float currentAngle = 0.0f;
+    public float direction;
     void Start () {
         selfAnim = gameObject.GetComponent<Animator>();
     }
@@ -20,6 +21,7 @@ public class gun : MonoBehaviour
     public void fire() {
         //if (brot==null) {brot = new Quaternion(0.0f,0.0f,0.0f,0.0f);}
         if(selfAnim){selfAnim.SetTrigger("Fire");}
-        GameObject bulletSpawned = Instantiate(Bullet, transform.position, currentAngle);
+        GameObject bulletSpawned = Instantiate(Bullet, transform.position, Quaternion.Euler(0.0f,direction,currentAngle));
     }
 }
+ 
