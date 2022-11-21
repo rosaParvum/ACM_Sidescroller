@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Reaction Events")]
     public UnityEvent shoot;
     public UnityEvent hit;
+    public UnityEvent die;
     GameObject frame;
     [HideInInspector]
     public spawner spawnColumn;
@@ -39,8 +40,13 @@ public class EnemyAI : MonoBehaviour
         //hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
         if (health == 0) {
             spawnColumn.canSpawn=true;
+            die.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    public void wounded(GameObject wound) {
+        Destroy(Instantiate(wound,transform.position,transform.rotation), 1);
     }
 
     IEnumerator ShootClock() {

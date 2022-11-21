@@ -23,19 +23,21 @@ public class EnemySpawnManager : MonoBehaviour
 
     // i have no idea what this does really
     IEnumerator secondClock() {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         while(spawnLoop){
+            //print(clock);
             foreach(Enemy type in enemyTypes) {
 
                 if ((clock % type.frequency) == 0) {
-                    type.Spawn(spawners);
+                    if (!type.special) type.Spawn(spawners); 
+                    if (type.special) type.SpecialSpawn(); 
                     yield return null;
                     // ^^^ what???????
                     //that line does nothing but if i take it out the project wont run
                 }
             }
             clock++;
-            yield return new WaitForSeconds(1.0f+Random.Range(-randomOffset,randomOffset));
+            yield return new WaitForSeconds(1+Random.Range(-randomOffset,randomOffset));
         }
     }
 }

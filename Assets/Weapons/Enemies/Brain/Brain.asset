@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Brain
   m_EditorClassIdentifier: 
   prefab: {fileID: 4913269194507702679, guid: 2388e9c9e9fbabd49926f3e9c314e7a0, type: 3}
-  frequency: 0.5
+  frequency: 1
