@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4913269194507702679, guid: 2388e9c9e9fbabd49926f3e9c314e7a0, type: 3}
   frequency: 1
+  special: 0
+  x: 0
