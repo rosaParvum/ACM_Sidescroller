@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     void Update() {
-        myGun.transform.right = thePlayer.position - myGun.transform.position;
+        if(thePlayer) myGun.transform.right = thePlayer.position - myGun.transform.position;
         myGun.currentAngle = myGun.transform.eulerAngles.z;
     }
 
@@ -55,4 +55,5 @@ public class EnemyAI : MonoBehaviour
             yield return new WaitForSeconds(fireSpeed);
         }
     }
+    
 }

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4578446095604841041}
   - component: {fileID: 4578446095604841040}
   - component: {fileID: 4578446095604841043}
-  - component: {fileID: 1315700507}
+  - component: {fileID: 3455281025913967080}
+  - component: {fileID: 8468005520444344787}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Frame
@@ -168,7 +169,7 @@ PlayableDirector:
     - 99d4376f-ea16-49d1-bae0-28af38dec5ec: {fileID: 0}
     - 0e2b7f9c8d27b5c4599814885844d791: {fileID: 8865873736789476750}
     - f183ab6fc98378940ad8f68a3a45c6ec: {fileID: 0}
---- !u!114 &1315700507
+--- !u!114 &3455281025913967080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,18 +187,30 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 145955085, guid: 4775a1b0554515742bba23984cf55ee0, type: 3}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: loadScene
-          m_Mode: 5
+        - m_Target: {fileID: 8468005520444344787}
+          m_TargetAssemblyTypeName: Frame, Assembly-CSharp
+          m_MethodName: GameOver
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: menu
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8468005520444344787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578446095604841006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a11fa883a4ddd4687708d87cd921dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &901531234226283628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,65 +297,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
       propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 4578446095604841043}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 4578446095078945992}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: GenerateImpulse
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: UnityEngine.Playables.PlayableDirector, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Cinemachine.CinemachineImpulseSource, Cinemachine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: shoot.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_FloatArgument
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-      propertyPath: dodge.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4935946599003890917, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -399,17 +356,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4935946599003890917, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
   m_PrefabInstance: {fileID: 8865873737843003425}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4578446095078945992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4935946599003890921, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
-  m_PrefabInstance: {fileID: 8865873737843003425}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4578446095078945986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &4578446095941744662 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4935946598677571639, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}

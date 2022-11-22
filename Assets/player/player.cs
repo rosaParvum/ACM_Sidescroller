@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Timeline;
 
 public class player : MonoBehaviour {
 
@@ -36,7 +37,6 @@ public class player : MonoBehaviour {
 
     FixedJoystick stick;
     
-
     // Start is called before the first frame update
     void Start() {
         playerAnim = transform.GetChild(0).gameObject.GetComponent<Animator>();
