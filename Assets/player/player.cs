@@ -27,6 +27,7 @@ public class player : MonoBehaviour {
     public UnityEvent hit;
     public UnityEvent shoot; 
     public UnityEvent dodge;
+    public UnityEvent die;
 
     bool canMove = true;
     bool canCharge = true;                                                                                                                                                        
@@ -34,7 +35,6 @@ public class player : MonoBehaviour {
     bool moving; 
     shipAnimStats sAs;
     float baseSpeed;
-
     FixedJoystick stick;
     
     // Start is called before the first frame update
@@ -102,7 +102,7 @@ public class player : MonoBehaviour {
     }
 
     public void gotHit() {
-        canMove = false;
+        if (!canMove) die.Invoke();
     }
 
     public void expend(float energy) {
