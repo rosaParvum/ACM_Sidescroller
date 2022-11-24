@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.Timeline;
 
 public class player : MonoBehaviour {
 
@@ -102,7 +101,8 @@ public class player : MonoBehaviour {
     }
 
     public void gotHit() {
-        if (!canMove) die.Invoke();
+        if (!canMove) {StopCoroutine("overheat");canMove=false;die.Invoke();}
+        
     }
 
     public void expend(float energy) {

@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 7
+  damage: 70
   onSpawn:
     m_PersistentCalls:
       m_Calls: []

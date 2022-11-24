@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class bullet : MonoBehaviour
 {
     public float velocity;
+    public float damage;
     public UnityEvent onSpawn;
     Rigidbody2D bulletPhys;
     // Start is called before the first frame update
@@ -21,7 +22,12 @@ public class bullet : MonoBehaviour
             switch (col.gameObject.tag) {
                 case "Player":
                     print(col.gameObject);
-                    if(!col.gameObject.GetComponentInChildren<shipAnimStats>().inv) {col.gameObject.GetComponent<player>().hit.Invoke();Destroy(gameObject);}
+                    if(!col.gameObject.GetComponentInChildren<shipAnimStats>().inv) {
+                        player pl = col.gameObject.GetComponent<player>();
+                        pl.expend(damage);
+                        pl.hit.Invoke();
+                        Destroy(gameObject);
+                    }
                     break;
                 case "Enemy":
                     print(col.gameObject);

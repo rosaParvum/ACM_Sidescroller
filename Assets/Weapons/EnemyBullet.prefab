@@ -68,6 +68,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5540291474964346346, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
+      propertyPath: damage
+      value: 999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540291474964346346, guid: a7aa7538e9dcbc846aa0e91454bf8643, type: 3}
       propertyPath: velocity
       value: 12
       objectReference: {fileID: 0}
