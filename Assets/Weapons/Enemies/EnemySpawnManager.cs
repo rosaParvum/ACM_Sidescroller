@@ -11,6 +11,8 @@ public class EnemySpawnManager : MonoBehaviour
     int clock;
     spawner[] spawners;
 
+    public spawner SpecialSpawner;
+
     bool spawnLoop = true;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class EnemySpawnManager : MonoBehaviour
 
                 if ((clock % type.frequency) == 0) {
                     if (!type.special) type.Spawn(spawners); 
-                    if (type.special) type.SpecialSpawn(); 
+                    if (type.special) type.SpecialSpawn(SpecialSpawner); 
                     yield return null;
                     // ^^^ what???????
                     //that line does nothing but if i take it out the project wont run

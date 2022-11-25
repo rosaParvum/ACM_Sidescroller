@@ -21,7 +21,7 @@ public class bullet : MonoBehaviour
         if (col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Untagged" && !col.gameObject.name.Contains("Bullet")) {
             switch (col.gameObject.tag) {
                 case "Player":
-                    print(col.gameObject);
+                    //print(col.gameObject);
                     if(!col.gameObject.GetComponentInChildren<shipAnimStats>().inv) {
                         player pl = col.gameObject.GetComponent<player>();
                         pl.expend(damage);
@@ -30,8 +30,9 @@ public class bullet : MonoBehaviour
                     }
                     break;
                 case "Enemy":
-                    print(col.gameObject);
-                    col.gameObject.GetComponent<EnemyAI>().hit.Invoke();
+                    //print(col.gameObject);
+                    if (col.GetComponent<EnemyAI>()) {col.GetComponent<EnemyAI>().hit.Invoke();}
+                    if (col.GetComponent<TentacleController>()) {col.GetComponent<TentacleController>().hit.Invoke();}
                     Destroy(gameObject);
                     break;
             }

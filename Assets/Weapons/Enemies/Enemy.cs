@@ -8,7 +8,6 @@ public class Enemy:ScriptableObject {
     public GameObject prefab;
     public float frequency;
     public bool special;
-    [ConditionalField("special")] public int x;
 
     public GameObject Spawn(spawner[] spawners) {
         GameObject spawned = null;
@@ -21,7 +20,7 @@ public class Enemy:ScriptableObject {
             return null;
         }
     }
-    public void SpecialSpawn() {
-        
+    public void SpecialSpawn(spawner spawnpoint) {
+        spawnpoint.Spawn(prefab);
     }
 }
