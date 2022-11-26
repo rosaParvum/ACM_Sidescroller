@@ -18,7 +18,7 @@ public class bullet : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Untagged" && !col.gameObject.name.Contains("Bullet")) {
+        if (col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Untagged" && !col.gameObject.name.Contains("Bullet") && !col.gameObject.name.Contains("Worm")) {
             switch (col.gameObject.tag) {
                 case "Player":
                     //print(col.gameObject);

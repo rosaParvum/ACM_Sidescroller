@@ -8,16 +8,17 @@ public class TentacleController : MonoBehaviour {
     public UnityEvent die;
     public int health;
     public float speed;
+    public float damage;
     [HideInInspector]
     public spawner spawnColumn;
 
     // Start is called before the first frame update
     void Start() {
-        
+        Destroy(gameObject,12);
     }
 
     void Update() {
-        transform.Translate(new Vector3(speed*Time.deltaTime,0.0f,0.0f));
+        transform.Translate(-transform.right*speed*Time.deltaTime);
     }
 
     public void gotHit() {
@@ -31,10 +32,16 @@ public class TentacleController : MonoBehaviour {
     }
 
     public void wounded(GameObject wound) {
-        Destroy(Instantiate(wound,transform.position,transform.rotation), 1);
+        Destroy(Instantiate(wound,transform.position,transform.rotation), 2);
+    }
+
+    public void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "Player") {
+            col.GetComponent<player>().InvokeHit(damage);
+        }
     }
 
     public void Spawn() {
-        
+
     }
 }

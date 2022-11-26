@@ -20,7 +20,8 @@ public class Enemy:ScriptableObject {
             return null;
         }
     }
-    public void SpecialSpawn(spawner spawnpoint) {
-        spawnpoint.Spawn(prefab);
+    public void SpecialSpawn(spawner[] spawners) {
+        spawner spawnpoint = spawners[Random.Range(0,spawners.Length)];
+        GameObject spawned = spawnpoint.Spawn(prefab);
     }
 }

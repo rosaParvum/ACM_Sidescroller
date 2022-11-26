@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &402808008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402808009}
+  - component: {fileID: 402808010}
+  m_Layer: 0
+  m_Name: TentacleSpawnerBot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402808009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402808008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 130, y: -27.4, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4578446095604841041}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402808010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402808008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e31ae9d5608e1446a66d1cddfdaea37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpawn: 1
 --- !u!1 &4578446095604841006
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +80,7 @@ Transform:
   - {fileID: 4578446095078945988}
   - {fileID: 4820426741508987547}
   - {fileID: 1045453631764753849}
+  - {fileID: 402808009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,6 +207,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 7240708748399319492, guid: 65ecd66898de50348a4a40be0ff7981f, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -8587502445874667955, guid: 65ecd66898de50348a4a40be0ff7981f, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - f805db35bddc586408bb266f2b285a2e: {fileID: 0}
@@ -223,7 +271,7 @@ GameObject:
   - component: {fileID: 1045453631764753849}
   - component: {fileID: 582562945199881157}
   m_Layer: 0
-  m_Name: TentacleSpawner
+  m_Name: TentacleSpawnerTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,14 +284,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8196820514305061325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 130, y: 30, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4578446095604841041}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &582562945199881157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: enemyTypes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: enemyTypes.Array.data[0]
@@ -279,7 +327,19 @@ PrefabInstance:
     - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: enemyTypes.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: d9dfff12711d2c04d9653400f290ade9, type: 2}
+      objectReference: {fileID: 11400000, guid: 9b086575d9f54324da627802ce30fd71, type: 2}
+    - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
+      propertyPath: SpecialSpawners.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
+      propertyPath: SpecialSpawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 582562945199881157}
+    - target: {fileID: 3988705248750503332, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
+      propertyPath: SpecialSpawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 402808010}
     - target: {fileID: 5649617802598153975, guid: 1538a33d567fc6c4fa0d97c9ee4240d6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -343,9 +403,81 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: hit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4578446095078945986}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4578446095604841043}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
       propertyPath: hit.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 4578446095604841043}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animation, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: TapeStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935946599003890916, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
+      propertyPath: die.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4935946599003890917, guid: 03e5b9558108f4041959acda8ec5cb9b, type: 3}
       propertyPath: m_RootOrder
       value: 0

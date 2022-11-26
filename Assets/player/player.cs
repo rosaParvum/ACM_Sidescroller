@@ -77,7 +77,6 @@ public class player : MonoBehaviour {
 
         speed = baseSpeed;
     }
-
     void FixedUpdate() {
 
         if (canCharge){//&& !moving) {
@@ -95,7 +94,7 @@ public class player : MonoBehaviour {
     IEnumerator overheat() {
         energyBar.gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(255.0f,0.0f,0.0f,255.0f);
         canMove = false;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1);
         canMove = true;
         energyBar.gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color(255.0f,255.0f,255.0f,255.0f);
     }
@@ -115,8 +114,9 @@ public class player : MonoBehaviour {
         }
     }
 
-    public void InvokeHit() {
+    public void InvokeHit(float damage = 0.0f) {
         hit.Invoke();
+        expend(damage);
     }
 
     public void InvokeDodge() {

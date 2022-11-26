@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Tentacle
   m_EditorClassIdentifier: 
   prefab: {fileID: 3500156551708171379, guid: 60c74fe508d328f44a3823045def6924, type: 3}
-  frequency: 5
+  frequency: 10
   special: 1
-  SpecialController: {fileID: 0}
