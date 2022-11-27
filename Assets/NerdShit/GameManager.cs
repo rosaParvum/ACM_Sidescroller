@@ -6,35 +6,40 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager Instance { get; private set; }
+    //public static GameManager Instance { get; private set; }
     public int wave;
     public float transitionSpeed;
-    public Animator SceneTransitions;
+    private Animator SceneTransitions;
 
     public void Start() {
-        SceneTransitions = gameObject.GetComponent<Animator>();
         SceneManager.sceneLoaded += OnSceneLoaded;
-        DontDestroyOnLoad(gameObject);
-        if (Instance == null) {
-            Instance = this;
-        } else {
-            Destroy(gameObject);
+        /*
+        GameManager[] gms = FindObjectsOfType<GameManager>();
+        if (gms.Length > 1) {
+            foreach (GameManager gm in gms) {
+                if (gm != this) {
+                    Destroy(gm.gameObject);
+                }
+            }
         }
+        */
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this);
+        SceneTransitions = gameObject.GetComponent<Animator>();
+        DontDestroyOnLoad(SceneTransitions);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        SceneTransitions = gameObject.GetComponent<Animator>();
+        print("loaded "+scene.name);
         SceneTransitions.SetTrigger("Contract");
-        
-        if (scene.name == "menu") {
-            print("menu loaded. setting up buttons");
-            GameObject.Find("Play").GetComponent<Button>().onClick.AddListener(delegate {loadScene("pew pew");});
-        }
         //frameTimeline.SetGenericBinding((Object)(((TimelineAsset)frameTimeline.playableAsset).GetOutputTracks().Where(e => e.name=="Signal Track")), gameObject.GetComponent<SignalReceiver>());
 
     }
 
     public void loadScene(string name) {
-        Instance.StartCoroutine("transition", name);
+        SceneTransitions = gameObject.GetComponent<Animator>();
+        StartCoroutine("transition", name);
     }
     private IEnumerator transition(string name) {
         SceneTransitions.SetFloat("TransitionSpeed", transitionSpeed);
