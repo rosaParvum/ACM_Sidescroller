@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
         SceneTransitions = gameObject.GetComponent<Animator>();
         print("loaded "+scene.name);
         SceneTransitions.SetTrigger("Contract");
+        if (scene.name == "pew pew") SceneTransitions.SetTrigger("fadeMusic");
         //frameTimeline.SetGenericBinding((Object)(((TimelineAsset)frameTimeline.playableAsset).GetOutputTracks().Where(e => e.name=="Signal Track")), gameObject.GetComponent<SignalReceiver>());
 
     }

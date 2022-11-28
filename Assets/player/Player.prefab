@@ -658,7 +658,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 867f36f5c91917941a008a099260a455, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -801,7 +801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471b6128ba89cb55fa76d7724a08f9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSprite: {fileID: 4935946598677571640}
   playerMat: {fileID: 2100000, guid: abdd95aa35758304681bf3ac16861347, type: 2}
 --- !u!1001 &3446887601231563774
 PrefabInstance:
