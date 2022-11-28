@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public int wave;
     public float transitionSpeed;
     private Animator SceneTransitions;
+    public bool playing;
 
 
     public void Start() {
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour {
         SceneTransitions = gameObject.GetComponent<Animator>();
         print("loaded "+scene.name);
         SceneTransitions.SetTrigger("Contract");
-        if (scene.name == "pew pew") SceneTransitions.SetTrigger("fadeMusic");
+        if (scene.name == "pew pew") {SceneTransitions.SetTrigger("fadeOut");playing=true;}
+        if (scene.name == "menu" && playing) {SceneTransitions.SetTrigger("fadeIn");playing=false;}
         //frameTimeline.SetGenericBinding((Object)(((TimelineAsset)frameTimeline.playableAsset).GetOutputTracks().Where(e => e.name=="Signal Track")), gameObject.GetComponent<SignalReceiver>());
 
     }
