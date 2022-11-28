@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 4935946599003890920}
   - component: {fileID: 100423770}
   - component: {fileID: 100423771}
+  - component: {fileID: 8042102329393921697}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -462,6 +463,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  die:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &4935946599003890918
 Animator:
   serializedVersion: 4
@@ -785,6 +789,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8042102329393921697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935946599003890915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471b6128ba89cb55fa76d7724a08f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSprite: {fileID: 4935946598677571640}
+  playerMat: {fileID: 2100000, guid: abdd95aa35758304681bf3ac16861347, type: 2}
 --- !u!1001 &3446887601231563774
 PrefabInstance:
   m_ObjectHideFlags: 0

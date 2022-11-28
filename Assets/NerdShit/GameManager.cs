@@ -1,15 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     //public static GameManager Instance { get; private set; }
     public int wave;
     public float transitionSpeed;
     private Animator SceneTransitions;
+
 
     public void Start() {
         SceneManager.sceneLoaded += OnSceneLoaded;
