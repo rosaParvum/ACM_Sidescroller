@@ -135,7 +135,7 @@ MonoBehaviour:
         m_MethodName: wounded
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8548463351946383545, guid: 7079f51839c823b45b83a057f9e620c0, type: 3}
+          m_ObjectArgument: {fileID: 1277941928719415712, guid: 94d15028225447d4e8e7bd8e87fc7332, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
