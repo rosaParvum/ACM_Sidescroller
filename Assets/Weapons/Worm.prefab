@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e10373b96b44d347bc694e5c3e82376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: -7
+  velocity: 7
   damage: 70
   onSpawn:
     m_PersistentCalls:

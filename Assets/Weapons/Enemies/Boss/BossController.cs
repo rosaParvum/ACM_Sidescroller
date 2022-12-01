@@ -32,4 +32,9 @@ public class BossController : MonoBehaviour {
         laser.gameObject.SetActive(false);
         Instantiate(wormBarrage,laser.position,laser.rotation).transform.eulerAngles.SetZ(-laser.eulerAngles.z);
     }
+
+    public void demoOver() {
+        FindObjectOfType<GameManager>().loadScene("demoOver");
+    }
 }
+

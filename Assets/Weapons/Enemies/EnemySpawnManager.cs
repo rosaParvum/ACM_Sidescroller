@@ -9,7 +9,8 @@ public class EnemySpawnManager : MonoBehaviour
     public Enemy[] enemyTypes;
 
     int clock;
-    spawner[] spawners;
+    [HideInInspector]
+    public spawner[] spawners;
 
     public spawner[] SpecialSpawners;
 

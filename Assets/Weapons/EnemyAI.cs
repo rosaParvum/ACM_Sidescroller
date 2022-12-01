@@ -21,13 +21,12 @@ public class EnemyAI : MonoBehaviour
     
 
     void Start() {
+        die.AddListener(delegate {FindObjectOfType<player>().scoreUp();});
         myGun = transform.GetChild(0).GetComponent<gun>();
         thePlayer = GameObject.Find("Player").transform;
         spawnColumn.canSpawn=false;
         StartCoroutine(ShootClock());
         frame = GameObject.FindGameObjectWithTag("Frame");
-
-        shoot.Invoke();
     }
 
     void Update() {

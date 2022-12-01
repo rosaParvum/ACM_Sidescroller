@@ -15,6 +15,7 @@ public class TentacleController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Destroy(gameObject,12);
+        die.AddListener(delegate {FindObjectOfType<player>().scoreUp();});
     }
 
     void Update() {

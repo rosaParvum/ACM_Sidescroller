@@ -35,7 +35,10 @@ public class player : MonoBehaviour {
     shipAnimStats sAs;
     float baseSpeed;
     FixedJoystick stick;
-    
+
+    //[HideInInspector]
+    public int score;
+
     // Start is called before the first frame update
     void Start() {
         playerAnim = transform.GetChild(0).gameObject.GetComponent<Animator>();
@@ -122,6 +125,23 @@ public class player : MonoBehaviour {
     public void InvokeDodge() {
         if (canMove) {
             dodge.Invoke();
+        }
+    }
+
+    public void scoreUp() {
+        score++;
+        if (score == 25) {
+            print("boss fight triggered");
+            transform.parent.GetChild(4).gameObject.SetActive(true);
+            foreach (spawner spn in FindObjectsOfType<spawner>()) {
+                try {
+                    spn.transform.GetChild(0).GetComponent<EnemyAI>().die.Invoke();
+                    Destroy( spn.transform.GetChild(0).gameObject);
+                    spn.canSpawn = false;
+                } catch {
+                    spn.canSpawn = false;
+                }
+            }
         }
     }
 }
