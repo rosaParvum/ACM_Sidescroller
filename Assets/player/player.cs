@@ -70,9 +70,11 @@ public class player : MonoBehaviour {
             physAnim.SetFloat("Direction", 0);
             moving=false;
         }
+		/* android build
         if (Input.GetButtonDown("Fire1") && canMove) {
             shoot.Invoke();
         }
+		*/
 
         if (Input.GetButtonDown("Jump") && canMove) {
             dodge.Invoke();
