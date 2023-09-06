@@ -52,7 +52,30 @@ public class player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         float direction = Input.GetAxisRaw("Vertical");
-        if(stick){direction+=stick.Direction.y;}
+		/*
+		if (Input.touchCount > 0) {
+            Touch touch = Input.GetTouch(0);
+			if (touch.position.x < 300) {
+				direction = Mathf.Clamp(Camera.main.ScreenToWorldPoint(touch.position).y - transform.position.y,-1,1);
+				if (Mathf.Abs(direction) < 0.05) {
+					direction = 0;
+				}
+			}
+		}
+		*/
+		if (true) {
+            //Touch touch = Input.GetTouch(0);
+			if (Input.mousePosition.x < 500) {
+				direction = Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y,-1,1);
+				//print(Mathf.Abs(direction));
+				if (Mathf.Abs(direction) < 0.1) {
+					direction = 0;
+				}
+			}
+		}
+
+		if(stick){direction+=stick.Direction.y;}
+		
 
         if (sAs.inv) {speed += 20.0f;}
         if (direction>0 && transform.position.y < upBound &&canMove) {
